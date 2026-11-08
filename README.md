@@ -6,6 +6,10 @@ No LangChain, no LlamaIndex. The retrieval pipeline is built from scratch: your 
 
 > **Status:** pre-alpha. This README describes the intended behavior of the app; the implementation is in progress.
 
+## About the name
+
+A _stead_ is a homestead: the place where things are kept, worked, and passed on. **Ragstead** is the same idea for retrieval-augmented generation, a place where your documents live and your questions come to be answered. It is also literal — the app keeps local corpora on your own machine, with nothing shipped to a hosted service.
+
 ## Why
 
 Most RAG demos are a wrapper around a framework and a hosted API. Ragstead is the opposite:
@@ -17,13 +21,13 @@ Most RAG demos are a wrapper around a framework and a hosted API. Ragstead is th
 
 ## Features
 
-- 💬 **Streaming chat** — answers stream token by token, with inline source citations.
-- 📎 **Temporary uploads** — drop a file into a single chat. It is chunked, indexed for that chat only, and deleted when the chat is deleted (or after a TTL). Temporary files never leak into libraries.
-- 📚 **Knowledge libraries** — named, persistent collections of documents you can attach to any chat. Ingest once, query from many conversations.
-- 🗂 **Multiple chats** — a sidebar of conversations with titles, timestamps, and full message history. Click any chat to resume it exactly where you left off.
-- 🧠 **RAG from scratch** — own token-aware chunker, Ollama `/api/embeddings`, vector store in SQLite, top-k cosine retrieval, prompt assembly with citations.
-- 🐳 **One-command deploy** — `docker compose up` starts Ollama, the API, and the UI together.
-- 📴 **Offline capable** — pull the models once, then run without a network connection.
+- **Streaming chat** — answers stream token by token, with inline source citations.
+- **Temporary uploads** — drop a file into a single chat. It is chunked, indexed for that chat only, and deleted when the chat is deleted (or after a TTL). Temporary files never leak into libraries.
+- **Knowledge libraries** — named, persistent collections of documents you can attach to any chat. Ingest once, query from many conversations.
+- **Multiple chats** — a sidebar of conversations with titles, timestamps, and full message history. Click any chat to resume it exactly where you left off.
+- **RAG from scratch** — own token-aware chunker, Ollama `/api/embeddings`, vector store in SQLite, top-k cosine retrieval, prompt assembly with citations.
+- **One-command deploy** — `docker compose up` starts Ollama, the API, and the UI together.
+- **Offline capable** — pull the models once, then run without a network connection.
 
 ## Stack
 
@@ -176,6 +180,10 @@ pytest
 - [ ] Reranking pass over top-k candidates
 - [ ] Chat export (Markdown)
 
+## Style
+
+One rule, enforced everywhere in this repository: **no emojis**. Not in the UI, not in code, comments, commit messages, issues, or any Markdown file. Use plain text and, where structure helps, a short label or an icon set in CSS/SVG that is part of the design system.
+
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE). Copyright (c) 2026 Adel Aloui.
