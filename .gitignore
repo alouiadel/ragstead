@@ -1,0 +1,10 @@
+# Agent instructions are local-only
+AGENTS.md
+
+# Runtime data and local config
+data/
+.env
+
+# Python
+__pycache__/
+.venv/
