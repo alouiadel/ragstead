@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ragstead</title>
+    <link rel="icon" href="/assets/favicon-32.png" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <button
+          id="brand-home"
+          class="brand"
+          type="button"
+          aria-label="Ragstead home"
+        >
+          <img src="/assets/logo.svg" alt="" width="28" height="28" />
+          <span>Ragstead</span>
+        </button>
+
+        <button id="new-chat" class="new-chat" type="button">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+            <path
+              d="M8 3v10M3 8h10"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+            />
+          </svg>
+          New chat
+        </button>
+
+        <label class="search">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+            <circle
+              cx="7"
+              cy="7"
+              r="4.4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            />
+            <path
+              d="m10.5 10.5 3 3"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+          </svg>
+          <input
+            id="chat-search"
+            type="search"
+            placeholder="Search chats"
+            autocomplete="off"
+          />
+        </label>
+
+        <div id="chat-toolbar" class="chat-toolbar"></div>
+
+        <nav id="chat-list" class="chat-list" aria-label="Chats"></nav>
+
+        <div class="sidebar-models">
+          <button class="model-button" data-kind="chat" type="button">
+            <span class="model-status" data-status></span>
+            <span class="model-text">
+              <span class="model-label">Chat model</span>
+              <span class="model-name" id="chat-model-name">Loading</span>
+            </span>
+          </button>
+          <button class="model-button" data-kind="embed" type="button">
+            <span class="model-status" data-status></span>
+            <span class="model-text">
+              <span class="model-label">Embeddings</span>
+              <span class="model-name" id="embed-model-name">Loading</span>
+            </span>
+          </button>
+        </div>
+      </aside>
+
+      <main class="chat">
+        <div id="messages" class="messages"></div>
+        <form id="composer" class="composer">
+          <textarea
+            id="composer-input"
+            rows="1"
+            placeholder="Message Ragstead"
+            aria-label="Message"
+          ></textarea>
+          <button
+            id="send"
+            class="send"
+            type="submit"
+            aria-label="Send message"
+          >
+            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+              <path
+                d="M2 8h11M9 3.5 13.5 8 9 12.5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </form>
+      </main>
+    </div>
+
+    <div id="modal-root"></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

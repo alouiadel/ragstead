@@ -12,10 +12,15 @@ fi
 
 sips -s format png "$SOURCE" --out "$ASSETS/icon-1024.png" >/dev/null
 
-sips -z 512 512 "$ASSETS/icon-1024.png" --out "$ASSETS/icon-512.png" >/dev/null
-sips -z 192 192 "$ASSETS/icon-1024.png" --out "$ASSETS/icon-192.png" >/dev/null
-sips -z 180 180 "$ASSETS/icon-1024.png" --out "$ASSETS/apple-touch-icon.png" >/dev/null
-sips -z 32 32 "$ASSETS/icon-1024.png" --out "$ASSETS/favicon-32.png" >/dev/null
-sips -z 16 16 "$ASSETS/icon-1024.png" --out "$ASSETS/favicon-16.png" >/dev/null
+for icon in \
+    "512:icon-512.png" \
+    "192:icon-192.png" \
+    "180:apple-touch-icon.png" \
+    "32:favicon-32.png" \
+    "16:favicon-16.png"; do
+    size="${icon%%:*}"
+    name="${icon#*:}"
+    sips -z "$size" "$size" "$ASSETS/icon-1024.png" --out "$ASSETS/$name" >/dev/null
+done
 
 echo "Wrote icon set to $ASSETS"
